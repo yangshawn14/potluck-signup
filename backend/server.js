@@ -12,17 +12,6 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-const path = require('path');
-
-// Serve static frontend
-app.use(express.static(path.join(__dirname, '../public')));
-
-// Optional: Serve index.html for unknown routes (good for SPAs or fallback)
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/index.html'));
-});
-
-
 // Connect to MongoDB
 connectDB();
 
@@ -72,6 +61,10 @@ app.put('/dishes/:id', async (req, res) => {
     } catch (err) {
         res.status(400).json({ error: 'Failed to update dish' });
     }
+});
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
