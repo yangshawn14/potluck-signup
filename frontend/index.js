@@ -13,7 +13,7 @@ document.getElementById('dishForm').addEventListener('submit', function (e) {
     const name = document.getElementById('nameInput').value;
     const dish = document.getElementById('dishInput').value;
 
-    axios.post('http://localhost:3000/dishes', { name, dish })
+    axios.post('http://localhost:5000/dishes', { name, dish })
         .then(() => location.reload())  // simple reload to fetch updated list
         .catch(err => console.error(err));
 });
