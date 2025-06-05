@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ward Activity Sign-Up</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+
+    <header>
+        <form id="signup-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required />
+
+            <label for="dish">Dish:</label>
+            <input type="text" id="dish" name="dish" required />
+
+            <button type="submit">Add</button>
+        </form>
+    </header>
+
+    <main>
+        <h2 style="text-align:center;">Who's Bringing What?</h2>
+        <div class="signup-list" id="signup-list">
+            <!-- Entries will go here -->
+        </div>
+    </main>
+
+    <script src="./index.js"></script>
+
+</body>
+
+</html>
