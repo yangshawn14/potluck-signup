@@ -1,6 +1,6 @@
 console.log('JS loaded');
 
-const apiBase = 'http://localhost:5000'; // Change to your backend URL when deployed
+const apiBase = 'https://potluck-signup.onrender.com'; // Change to your backend URL when deployed
 
 const form = document.getElementById('signupForm');
 const nameInput = document.getElementById('name');
