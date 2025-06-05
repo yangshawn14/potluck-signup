@@ -6,5 +6,5 @@ const DishSchema = new mongoose.Schema({
     dish: { type: String, required: true },
 }, { timestamps: true });
 
-module.exports = mongoose.model('dish', DishSchema);
+module.exports = mongoose.model('Dish', DishSchema);
 

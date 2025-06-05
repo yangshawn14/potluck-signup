@@ -29,6 +29,7 @@ app.get('/dishes', async (req, res) => {
 app.post('/dishes', async (req, res) => {
     try {
         const { name, dish } = req.body;
+        console.log('Received:', name, dish);
         const newDish = new Dish({ name, dish });
         await newDish.save();
         res.status(201).json(newDish);

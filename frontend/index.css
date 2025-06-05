@@ -1,42 +1,59 @@
-body {
-    font-family: Arial, sans-serif;
+/* Reset */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+body {
+    font-family: sans-serif;
+    background: #f9f9f9;
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    margin: .5rem;
+}
+
+/* Sticky form at the top */
 header {
     position: sticky;
     top: 0;
-    background: #f4f4f4;
-    padding: 1rem;
+    background: #ffffff;
+    padding: 1rem 1.5rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 1000;
 }
 
+/* Form layout */
 form {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    gap: 0.75rem;
 }
 
 label {
-    margin-right: 0.25rem;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+    margin-left: .5rem;
+    text-align: left;
 }
 
-input[type="text"] {
-    padding: 0.5rem;
+input {
+    padding: 0.6rem;
+    font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 
 button {
-    padding: 0.5rem 1rem;
+    padding: 0.7rem;
     background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 4px;
+    font-weight: bold;
     cursor: pointer;
 }
 
@@ -44,23 +61,69 @@ button:hover {
     background-color: #45a049;
 }
 
+/* Main content area */
 main {
-    padding: 1rem;
-}
-
-.signup-list {
+    padding: 1rem 1.5rem;
     max-width: 600px;
-    margin: auto;
+    margin: 1rem auto;
 }
 
-.signup-entry {
-    background: #e9f7ef;
-    border-left: 4px solid #4CAF50;
+ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+li {
+    background: #fff;
     padding: 1rem;
-    margin-bottom: 0.5rem;
-    border-radius: 4px;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-.signup-entry strong {
-    display: block;
+.actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.actions button {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.9rem;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+    body {
+        padding: 0;
+        text-align: center;
+    }
+
+    header,
+    main {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .actions {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    input,
+    button {
+        width: 90%;
+        margin: 0 auto;
+        display: block;
+    }
 }
