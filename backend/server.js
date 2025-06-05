@@ -3,6 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const connectDB = require('./db');
 const Dish = require('./models/Dish');
+const path = require('path'); // <-- Make sure this is here
 require('dotenv').config();
 
 const app = express();
@@ -15,8 +16,7 @@ app.use(express.json());
 // Connect to MongoDB
 connectDB();
 
-
-// Routes
+// === API ROUTES ===
 app.get('/dishes', async (req, res) => {
     try {
         const dishes = await Dish.find();
@@ -63,6 +63,10 @@ app.put('/dishes/:id', async (req, res) => {
     }
 });
 
+// === Serve Static Frontend ===
+app.use(express.static(path.join(__dirname, '../public')));
+
+// === Wildcard route (must come LAST) ===
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/index.html'));
 });
